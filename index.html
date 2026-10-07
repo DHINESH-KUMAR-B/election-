@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="image/dklogo.png">
+  <title>DK Student Letter Requester</title>
+  <style>
+    /* you/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: rgba(21, 101, 192, 0.95);
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+header h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #ffca28;
+  text-transform: uppercase;
+}
+
+/* Container */
+.container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffeb3b;
+}
+
+/* Inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+input:focus, textarea:focus, select:focus {
+  background: rgba(255,255,255,0.2);
+  border: 2px solid #ffca28;
+}
+
+/* Button */
+button {
+  background: #ffca28;
+  color: #000;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+button:hover {
+  background: #fbc02d;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0d47a1;
+  margin-top: auto;
+  font-size: 14px;
+  color: #ffeb3b;
+  letter-spacing: 1px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DK Student Letter Request</h1>
+  </header>
+
+  <div class="container">
+    <form id="letterForm">
+      <label>Student Name</label>
+      <input type="text" name="name" required>
+
+      <label>Department</label>
+      <select name="department" required>
+        <option value="">Select</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="BME">BME</option>
+        <option value="AI&DS">AI&DS</option>
+        <option value="AI&ML">AI&ML</option>
+        <option value="RA">RA</option>
+        <option value="IT">IT</option>
+        <option value="FT">FT</option>
+      </select>
+
+      <label>Problem</label>
+      <input type="text" name="problem">
+
+      <label>What type of solution you want?</label>
+      <textarea name="reason" rows="4" required></textarea>
+
+      <label>Date</label>
+      <input type="date" name="date" required>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>please support as to win</p>
+  </footer>
+
+  <!-- External JS file -->
+  <script type="module" src="firebase.js"></script>
+</body>
+</html>
